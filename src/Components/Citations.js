@@ -20,37 +20,35 @@ class Citations extends Component {
 
 	randomColor = () => {
 		let colors = this.state.colors;
-		this.setState({
-			color: colors[Math.floor(Math.random()*colors.length)],
-		})
+		return colors[Math.floor(Math.random()*colors.length)];
 	}
 
 	nextQuote = () => {
-		axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://kaamelott.chaudie.re/api/random/personnage/Arthur`)
+		axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://kaamelott.chaudie.re/api/random/personnage/Perceval`)
 
 		.then(response => {
 			this.setState({
 				author: response.data.citation.infos.personnage,
 				citation: response.data.citation.citation,
 				episode: response.data.citation.infos.episode,
+				color: this.randomColor(),
 			})
 		})
 		.catch(error => {
 			console.log(error);
 		});
-		this.randomColor();
 	}
 
 	render() {
 		return (
-			<div>
+			<div className={"citation " + this.state.color}>
 			<div className="columns">
 			<div className="column">
 			<h1 className="title is-1 has-text-centered">Random Citations</h1>
 			</div>
 			</div>
 			<div className="columns is-centered">
-			<div className={"column is-10 " + this.state.color}>
+			<div className="column is-10 ">
 			<div className="columns">
 			<h4 className="column is-size-4 has-text-weight-bold">episode : { this.state.episode }</h4>
 			</div>

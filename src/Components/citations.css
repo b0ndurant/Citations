@@ -1,0 +1,61 @@
+.citation {
+	height: 100vh;
+}
+
+.title {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: white;
+}
+.is-10 {
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: white;
+}
+
+/*------------------ COLOR -----------------*/
+
+.blue {
+	background-color: blue;
+	color: white;
+}
+
+.blue .is-10 {
+	color: blue;
+}
+
+.red {
+	background-color: red;
+	color: white;
+}
+
+.red .is-10 {
+	color: red;
+}
+
+.green {
+	background-color: green;
+	color: white;
+}
+
+.green .is-10 {
+	color: green;
+}
+
+.gray {
+	background-color: gray;
+	color: white;
+}
+
+.gray .is-10 {
+	color: gray;
+}
+
+.blueLight {
+	background-color: #31cab3;
+	color: white;
+}
+
+.blueLight .is-10 {
+	color: #31cab3;
+}
